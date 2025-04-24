@@ -15,13 +15,16 @@
       padding: 30px;
       color: #333;
     }
+
     h1 {
       color: #f51d1d;
       text-align: center;
     }
+
     .question {
       margin: 20px 0;
     }
+
     button {
       background-color: #f51d1d;
       color: white;
@@ -31,19 +34,55 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    .result, .promo {
+
+    .result {
       margin-top: 30px;
+      padding: 20px;
+      background-color: #fff7e6;
+      border: 2px solid #f5c542;
+      border-radius: 12px;
+      max-width: 500px;
+      font-size: 18px;
+      font-weight: bold;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
+    .promo {
+      margin-top: 40px;
+      padding: 25px;
+      background: linear-gradient(to right, #ffb3b3, #ff6666);
+      color: white;
+      text-align: center;
+      border-radius: 15px;
+      max-width: 600px;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
+    }
+
     .promo a {
       display: inline-block;
-      margin-top: 10px;
-      background-color: #f51d1d;
-      color: white;
+      margin-top: 15px;
+      background-color: white;
+      color: #f51d1d;
       text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 8px;
+      padding: 12px 20px;
+      border-radius: 10px;
       font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .promo a:hover {
+      background-color: #ffe6e6;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
@@ -51,6 +90,7 @@
   <h1>¿Cuál es tu lenguaje del amor?</h1>
 
   <form id="quizForm">
+    <!-- Preguntas aquí (idénticas al bloque anterior) -->
     <div class="question">
       <p>1. ¿Qué te hace sentir más apreciado?</p>
       <label><input type="radio" name="q1" value="palabras"> Que alguien reconozca tu esfuerzo</label><br>
@@ -102,8 +142,10 @@
   <div class="result" id="resultado"></div>
 
   <div class="promo" id="promo" style="display: none;">
-    <p>🎶 Descubre la nueva canción de <strong>TOMORROW X TOGETHER</strong>: <em>Love Language</em></p>
-    <a href="https://tomorrowxtogether.lnk.to/LoveLanguage" target="_blank">Escúchala ahora</a>
+    🎶 ¡Tu corazón ya está listo para el nuevo comeback de <strong>TOMORROW X TOGETHER</strong>!<br>
+    💌 Su nueva canción <em>Love Language</em> estará disponible <strong>el 2 de mayo</strong>. ¡No te la pierdas!
+    <br><br>
+    <a href="https://tomorrowxtogether.lnk.to/LoveLanguage" target="_blank">Escúchala aquí</a>
   </div>
 
   <script>
@@ -129,19 +171,19 @@
 
       switch (resultado) {
         case "palabras":
-          mensaje = "Tu lenguaje del amor son las palabras de afirmación. Valoras la expresión sincera de los sentimientos.";
+          mensaje = "💬 Tu lenguaje del amor son las palabras de afirmación. Valoras la expresión sincera de los sentimientos.";
           break;
         case "actos":
-          mensaje = "Tu lenguaje del amor son los actos de servicio. Los gestos significan más que mil palabras para ti.";
+          mensaje = "🤝 Tu lenguaje del amor son los actos de servicio. Los gestos significan más que mil palabras para ti.";
           break;
         case "tiempo":
-          mensaje = "Tu lenguaje del amor es el tiempo de calidad. Amas compartir momentos genuinos con tus seres queridos.";
+          mensaje = "⏳ Tu lenguaje del amor es el tiempo de calidad. Amas compartir momentos genuinos con tus seres queridos.";
           break;
         case "regalos":
-          mensaje = "Tu lenguaje del amor son los regalos. Para ti, los detalles cuentan como muestra de amor.";
+          mensaje = "🎁 Tu lenguaje del amor son los regalos. Para ti, los detalles cuentan como muestra de amor.";
           break;
         case "contacto":
-          mensaje = "Tu lenguaje del amor es el contacto físico. Abrazos, caricias y cercanía son esenciales para ti.";
+          mensaje = "💗 Tu lenguaje del amor es el contacto físico. Abrazos, caricias y cercanía son esenciales para ti.";
           break;
         default:
           mensaje = "Parece que no respondiste todas las preguntas. Inténtalo de nuevo.";
