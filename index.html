@@ -1,171 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>¿Cuál es tu lenguaje del amor?</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Lenguaje del Amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      body {
-      font-family: 'Poppins', sans-serif;
       background-color: #faf4d7;
-      color: #333;
-      margin: 0;
-      padding: 20px;
+      font-family: 'Poppins', sans-serif;
       text-align: center;
+      padding: 20px;
+      color: #333;
     }
+
+    img {
+      display: block;
+      margin: 0 auto 20px;
+      width: 150px;
+      height: auto;
+      border: none;
+      box-shadow: none;
+    }
+
     h1 {
       color: #f51d1d;
-      text-align: center;
     }
+
     .question {
       margin: 20px 0;
+      font-weight: bold;
     }
+
     button {
       background-color: #f51d1d;
       color: white;
       border: none;
       padding: 10px 20px;
+      margin-top: 20px;
       font-size: 16px;
-      border-radius: 8px;
       cursor: pointer;
-    }
-    .result, .promo {
-      margin-top: 30px;
-      text-align: center;
-    }
-    .promo a {
-      display: inline-block;
-      margin-top: 10px;
-      background-color: #f51d1d;
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
       border-radius: 8px;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 18px;
       font-weight: bold;
+      color: #f51d1d;
     }
 
- @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+    .promo {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fce5e5;
+      border-radius: 12px;
+      font-size: 18px;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .banner-img {
-      max-width: 400px;
-      margin: 0 auto 20px;
-      display: block;
-      box-shadow: none;
-      border: none;
+    .promo a {
+      color: #f51d1d;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-<img src="https://iili.io/3MNT38b.md.png" alt="TXT Banner" class="banner-img" />
+
+  <img src="https://iili.io/3MNT38b.md.png" alt="3MNT38b.md.png" />
+
   <h1>¿Cuál es tu lenguaje del amor?</h1>
 
   <form id="quizForm">
     <div class="question">
-      <p>1. ¿Qué te hace sentir más apreciado?</p>
-      <label><input type="radio" name="q1" value="palabras"> Que alguien reconozca tu esfuerzo</label><br>
-      <label><input type="radio" name="q1" value="actos"> Que te ayuden sin que lo pidas</label><br>
-      <label><input type="radio" name="q1" value="tiempo"> Que pasen tiempo contigo sin distracciones</label><br>
-      <label><input type="radio" name="q1" value="regalos"> Que te den un regalo que pensaron solo para ti</label><br>
-      <label><input type="radio" name="q1" value="contacto"> Un abrazo espontáneo</label>
+      1. ¿Qué gesto te hace sentir más querido por alguien?
+      <br>
+      <label><input type="radio" name="q1" value="palabras"> Me dice cosas lindas sin que se lo pida</label><br>
+      <label><input type="radio" name="q1" value="tiempo"> Me dedica tiempo sin distracciones</label><br>
+      <label><input type="radio" name="q1" value="regalos"> Me da detalles inesperados</label><br>
+      <label><input type="radio" name="q1" value="actos"> Me ayuda sin que yo lo pida</label><br>
+      <label><input type="radio" name="q1" value="contacto"> Me abraza o me toma de la mano</label>
     </div>
 
     <div class="question">
-      <p>2. ¿Qué te haría sentir amado en un mal día?</p>
-      <label><input type="radio" name="q2" value="contacto"> Que te tomen la mano</label><br>
-      <label><input type="radio" name="q2" value="tiempo"> Que alguien te escuche sin interrupciones</label><br>
-      <label><input type="radio" name="q2" value="actos"> Que te cocinen tu comida favorita</label><br>
-      <label><input type="radio" name="q2" value="regalos"> Que te regalen algo pequeño pero significativo</label><br>
-      <label><input type="radio" name="q2" value="palabras"> Que te digan que todo va a estar bien</label>
+      2. ¿Qué te haría más feliz después de un mal día?
+      <br>
+      <label><input type="radio" name="q2" value="palabras"> Que me escuche y me diga que todo estará bien</label><br>
+      <label><input type="radio" name="q2" value="tiempo"> Que pase tiempo conmigo viendo una peli</label><br>
+      <label><input type="radio" name="q2" value="regalos"> Que llegue con mi postre favorito</label><br>
+      <label><input type="radio" name="q2" value="actos"> Que me ayude con mis pendientes</label><br>
+      <label><input type="radio" name="q2" value="contacto"> Un abrazo largo y sincero</label>
     </div>
 
     <div class="question">
-      <p>3. ¿Qué gesto te parece más romántico?</p>
-      <label><input type="radio" name="q3" value="tiempo"> Una cita sin teléfonos ni interrupciones</label><br>
-      <label><input type="radio" name="q3" value="actos"> Que alguien haga algo que odia solo por ti</label><br>
-      <label><input type="radio" name="q3" value="palabras"> Una carta de amor escrita a mano</label><br>
-      <label><input type="radio" name="q3" value="regalos"> Un regalo hecho a mano</label><br>
-      <label><input type="radio" name="q3" value="contacto"> Dormir abrazados</label>
+      3. ¿Qué te hace sentir más inseguro en una relación?
+      <br>
+      <label><input type="radio" name="q3" value="palabras"> Que no me diga cómo se siente</label><br>
+      <label><input type="radio" name="q3" value="tiempo"> Que no tenga tiempo para verme</label><br>
+      <label><input type="radio" name="q3" value="regalos"> Que no recuerde fechas importantes</label><br>
+      <label><input type="radio" name="q3" value="actos"> Que no me apoye cuando lo necesito</label><br>
+      <label><input type="radio" name="q3" value="contacto"> Que evite el contacto físico</label>
     </div>
 
     <div class="question">
-      <p>4. ¿Qué valoras más en una relación?</p>
-      <label><input type="radio" name="q4" value="tiempo"> Compartir momentos cotidianos</label><br>
-      <label><input type="radio" name="q4" value="contacto"> La conexión física</label><br>
-      <label><input type="radio" name="q4" value="palabras"> La buena comunicación</label><br>
-      <label><input type="radio" name="q4" value="regalos"> Los detalles inesperados</label><br>
-      <label><input type="radio" name="q4" value="actos"> Que te cuiden cuando lo necesitas</label>
+      4. ¿Qué valoras más en una amistad?
+      <br>
+      <label><input type="radio" name="q4" value="palabras"> La honestidad en las palabras</label><br>
+      <label><input type="radio" name="q4" value="tiempo"> Que me acompañe en los momentos importantes</label><br>
+      <label><input type="radio" name="q4" value="regalos"> Que me sorprenda con cosas que me gustan</label><br>
+      <label><input type="radio" name="q4" value="actos"> Que esté ahí para ayudarme sin pedírselo</label><br>
+      <label><input type="radio" name="q4" value="contacto"> Que me abrace cuando lo necesito</label>
     </div>
 
     <div class="question">
-      <p>5. ¿Qué tipo de sorpresa te emocionaría más?</p>
-      <label><input type="radio" name="q5" value="regalos"> Un paquete con tus cosas favoritas</label><br>
-      <label><input type="radio" name="q5" value="contacto"> Un masaje después de un día largo</label><br>
-      <label><input type="radio" name="q5" value="palabras"> Un mensaje inesperado diciéndote cuánto te aman</label><br>
-      <label><input type="radio" name="q5" value="actos"> Que te limpien la casa sin decir nada</label><br>
-      <label><input type="radio" name="q5" value="tiempo"> Una tarde juntos sin distracciones</label>
+      5. ¿Qué te hace sentir más amado?
+      <br>
+      <label><input type="radio" name="q5" value="palabras"> Escuchar “te quiero” de verdad</label><br>
+      <label><input type="radio" name="q5" value="tiempo"> Que dedique tiempo solo para mí</label><br>
+      <label><input type="radio" name="q5" value="regalos"> Que piense en mí al regalar algo</label><br>
+      <label><input type="radio" name="q5" value="actos"> Que me cuide cuando estoy mal</label><br>
+      <label><input type="radio" name="q5" value="contacto"> Que me mime o me dé cariño físico</label>
     </div>
 
-    <button type="button" onclick="calcularResultado()">Ver mi resultado</button>
+    <button type="button" onclick="showResult()">Ver resultado</button>
   </form>
 
-  <div class="result" id="resultado"></div>
+  <div id="result"></div>
 
   <div class="promo" id="promo" style="display: none;">
-    <p>🎶 Descubre la nueva canción de <strong>TOMORROW X TOGETHER</strong>: <em>Love Language</em></p>
-    <a href="https://tomorrowxtogether.lnk.to/LoveLanguage" target="_blank">Escúchala ahora</a>
+    🎶 ¡Tu corazón ya está listo para el nuevo comeback de <strong>TOMORROW X TOGETHER</strong>!<br>
+    💌 Su nueva canción <em>Love Language</em> estará disponible <strong>el 2 de mayo</strong>. ¡No te la pierdas!
+    <br><br>
+    <a href="https://tomorrowxtogether.lnk.to/LoveLanguage" target="_blank">Escúchala aquí</a>
   </div>
 
   <script>
-    function calcularResultado() {
-      const respuestas = ["q1", "q2", "q3", "q4", "q5"];
-      const conteo = {
-        palabras: 0,
-        actos: 0,
-        tiempo: 0,
-        regalos: 0,
-        contacto: 0
+    function showResult() {
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElementById('result');
+      const promo = document.getElementById('promo');
+      const answers = ['q1', 'q2', 'q3', 'q4', 'q5'];
+      const count = {};
+
+      for (let q of answers) {
+        const val = form[q].value;
+        count[val] = (count[val] || 0) + 1;
+      }
+
+      const top = Object.keys(count).reduce((a, b) => count[a] > count[b] ? a : b);
+
+      const messages = {
+        palabras: "Tu lenguaje del amor son las **Palabras de Afirmación**. Te llenas cuando alguien expresa lo que siente por ti con sinceridad.",
+        tiempo: "Tu lenguaje del amor es el **Tiempo de Calidad**. Nada te hace sentir más especial que tener la atención total de quien quieres.",
+        regalos: "Tu lenguaje del amor son los **Regalos**. Te conmueve saber que pensaron en ti con algo significativo.",
+        actos: "Tu lenguaje del amor son los **Actos de Servicio**. Valoras cuando alguien se esfuerza en hacerte la vida más fácil.",
+        contacto: "Tu lenguaje del amor es el **Contacto Físico**. Para ti, un abrazo lo dice todo."
       };
 
-      for (let q of respuestas) {
-        const seleccion = document.querySelector(`input[name="${q}"]:checked`);
-        if (seleccion) {
-          conteo[seleccion.value]++;
-        }
-      }
-
-      const resultado = Object.keys(conteo).reduce((a, b) => conteo[a] > conteo[b] ? a : b);
-      let mensaje = "";
-
-      switch (resultado) {
-        case "palabras":
-          mensaje = "Tu lenguaje del amor son las palabras de afirmación. Valoras la expresión sincera de los sentimientos.";
-          break;
-        case "actos":
-          mensaje = "Tu lenguaje del amor son los actos de servicio. Los gestos significan más que mil palabras para ti.";
-          break;
-        case "tiempo":
-          mensaje = "Tu lenguaje del amor es el tiempo de calidad. Amas compartir momentos genuinos con tus seres queridos.";
-          break;
-        case "regalos":
-          mensaje = "Tu lenguaje del amor son los regalos. Para ti, los detalles cuentan como muestra de amor.";
-          break;
-        case "contacto":
-          mensaje = "Tu lenguaje del amor es el contacto físico. Abrazos, caricias y cercanía son esenciales para ti.";
-          break;
-        default:
-          mensaje = "Parece que no respondiste todas las preguntas. Inténtalo de nuevo.";
-      }
-
-      document.getElementById("resultado").innerText = mensaje;
-      if (mensaje !== "Parece que no respondiste todas las preguntas. Inténtalo de nuevo.") {
-        document.getElementById("promo").style.display = "block";
-      }
+      resultDiv.innerHTML = messages[top];
+      promo.style.display = 'block';
     }
   </script>
+
 </body>
 </html>
