@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Test de Lenguaje del Amor</title>
+  <style>
+    body { font-family: 'Arial', sans-serif; padding: 20px; background-color: #fff5f8; }
+    h1 { color: #cc3366; }
+    .question { margin-bottom: 25px; }
+    .question h3 { margin-bottom: 10px; }
+    label { display: block; margin-bottom: 5px; }
+    button { padding: 10px 20px; background-color: #cc3366; color: white; border: none; border-radius: 5px; font-size: 16px; }
+    #result { margin-top: 30px; font-size: 20px; font-weight: bold; color: #993366; }
+  </style>
+</head>
+<body>
+
+  <h1>¿Cuál es tu lenguaje del amor?</h1>
+
+  <div class="question">
+    <h3>1. ¿Qué te hace sentir más amado/a?</h3>
+    <label><input type="radio" name="q1" value="palabras"> Que me digan cosas lindas</label>
+    <label><input type="radio" name="q1" value="tiempo"> Que pasen tiempo conmigo</label>
+    <label><input type="radio" name="q1" value="regalos"> Que me den un regalo especial</label>
+    <label><input type="radio" name="q1" value="servicio"> Que hagan algo por mí sin que lo pida</label>
+    <label><input type="radio" name="q1" value="contacto"> Que me abracen o me tomen de la mano</label>
+  </div>
+
+  <div class="question">
+    <h3>2. ¿Qué valoras más en una relación?</h3>
+    <label><input type="radio" name="q2" value="tiempo"> Compartir momentos juntos</label>
+    <label><input type="radio" name="q2" value="palabras"> Sentirme apreciado/a con palabras</label>
+    <label><input type="radio" name="q2" value="contacto"> La cercanía física</label>
+    <label><input type="radio" name="q2" value="regalos"> Los detalles inesperados</label>
+    <label><input type="radio" name="q2" value="servicio"> Que me ayuden cuando lo necesito</label>
+  </div>
+
+  <div class="question">
+    <h3>3. ¿Cómo demuestras tu amor?</h3>
+    <label><input type="radio" name="q3" value="contacto"> Con abrazos y besos</label>
+    <label><input type="radio" name="q3" value="servicio"> Ayudando en lo que puedo</label>
+    <label><input type="radio" name="q3" value="palabras"> Diciendo lo que siento</label>
+    <label><input type="radio" name="q3" value="tiempo"> Pasando tiempo juntos</label>
+    <label><input type="radio" name="q3" value="regalos"> Regalando cosas con significado</label>
+  </div>
+
+  <button onclick="calcularLenguaje()">Ver mi lenguaje del amor</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calcularLenguaje() {
+      const respuestas = [
+        document.querySelector('input[name="q1"]:checked')?.value,
+        document.querySelector('input[name="q2"]:checked')?.value,
+        document.querySelector('input[name="q3"]:checked')?.value
+      ];
+
+      if (respuestas.includes(undefined)) {
+        document.getElementById("result").innerText = "Por favor responde todas las preguntas.";
+        return;
+      }
+
+      const contador = {
+        palabras: 0,
+        tiempo: 0,
+        regalos: 0,
+        servicio: 0,
+        contacto: 0
+      };
+
+      respuestas.forEach(r => contador[r]++);
+
+      let max = 0;
+      let lenguajeDominante = "";
+
+      for (const lenguaje in contador) {
+        if (contador[lenguaje] > max) {
+          max = contador[lenguaje];
+          lenguajeDominante = lenguaje;
+        }
+      }
+
+      const mensajes = {
+        palabras: "Tu lenguaje del amor es: 💬 Palabras de afirmación. Te llena escuchar que te quieren y lo bien que haces las cosas.",
+        tiempo: "Tu lenguaje del amor es: 🕰 Tiempo de calidad. Valoras profundamente estar presente con la persona que amas.",
+        regalos: "Tu lenguaje del amor es: 🎁 Recibir regalos. Para ti, los detalles tangibles son una expresión poderosa de amor.",
+        servicio: "Tu lenguaje del amor es: 🤝 Actos de servicio. Te hace feliz cuando hacen cosas por ti para demostrarte amor.",
+        contacto: "Tu lenguaje del amor es: 🤗 Contacto físico. Un abrazo o una caricia dicen más que mil palabras para ti."
+      };
+
+      document.getElementById("result").innerText = mensajes[lenguajeDominante];
+    }
+  </script>
+
+</body>
+</html>
