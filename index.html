@@ -160,53 +160,78 @@
     <a href="https://tomorrowxtogether.lnk.to/LoveLanguage" target="_blank">Escúchala aquí</a>
   </div>
 
+  <div id="shareButtons" style="display: none; margin-top: 20px; text-align: center;">
+  <a id="twitterShare" 
+     href="#" 
+     target="_blank" 
+     style="display: inline-block; background-color: #1DA1F2; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold;">
+     Compartir en Twitter
+  </a>
+</div>
+
   <script>
-    function calcularResultado() {
-      const respuestas = ["q1", "q2", "q3", "q4", "q5"];
-      const conteo = {
-        palabras: 0,
-        actos: 0,
-        tiempo: 0,
-        regalos: 0,
-        contacto: 0
-      };
+  function calcularResultado() {
+    const respuestas = ["q1", "q2", "q3", "q4", "q5"];
+    const conteo = {
+      palabras: 0,
+      actos: 0,
+      tiempo: 0,
+      regalos: 0,
+      contacto: 0
+    };
 
-      for (let q of respuestas) {
-        const seleccion = document.querySelector(`input[name="${q}"]:checked`);
-        if (seleccion) {
-          conteo[seleccion.value]++;
-        }
-      }
-
-      const resultado = Object.keys(conteo).reduce((a, b) => conteo[a] > conteo[b] ? a : b);
-      let mensaje = "";
-
-      switch (resultado) {
-        case "palabras":
-          mensaje = "💬 Tu lenguaje del amor son las palabras de afirmación. Valoras la expresión sincera de los sentimientos.";
-          break;
-        case "actos":
-          mensaje = "🤝 Tu lenguaje del amor son los actos de servicio. Los gestos significan más que mil palabras para ti.";
-          break;
-        case "tiempo":
-          mensaje = "⏳ Tu lenguaje del amor es el tiempo de calidad. Amas compartir momentos genuinos con tus seres queridos.";
-          break;
-        case "regalos":
-          mensaje = "🎁 Tu lenguaje del amor son los regalos. Para ti, los detalles cuentan como muestra de amor.";
-          break;
-        case "contacto":
-          mensaje = "💗 Tu lenguaje del amor es el contacto físico. Abrazos, caricias y cercanía son esenciales para ti.";
-          break;
-        default:
-          mensaje = "Parece que no respondiste todas las preguntas. Inténtalo de nuevo.";
-      }
-
-      document.getElementById("resultado").innerText = mensaje;
-      if (mensaje !== "Parece que no respondiste todas las preguntas. Inténtalo de nuevo.") {
-        document.getElementById("promo").style.display = "block";
+    for (let q of respuestas) {
+      const seleccion = document.querySelector(`input[name="${q}"]:checked`);
+      if (seleccion) {
+        conteo[seleccion.value]++;
       }
     }
-  </script>
+
+    const resultado = Object.keys(conteo).reduce((a, b) => conteo[a] > conteo[b] ? a : b);
+    let mensaje = "";
+    let textoTwitter = "";
+
+    switch (resultado) {
+      case "palabras":
+        mensaje = "💬 Tu lenguaje del amor son las palabras de afirmación. Valoras la expresión sincera de los sentimientos.";
+        textoTwitter = "Words of Affirmation 💬";
+        break;
+      case "actos":
+        mensaje = "🤝 Tu lenguaje del amor son los actos de servicio. Los gestos significan más que mil palabras para ti.";
+        textoTwitter = "Acts of Service 🤝";
+        break;
+      case "tiempo":
+        mensaje = "⏳ Tu lenguaje del amor es el tiempo de calidad. Amas compartir momentos genuinos con tus seres queridos.";
+        textoTwitter = "Quality Time ⏳";
+        break;
+      case "regalos":
+        mensaje = "🎁 Tu lenguaje del amor son los regalos. Para ti, los detalles cuentan como muestra de amor.";
+        textoTwitter = "Receiving Gifts 🎁";
+        break;
+      case "contacto":
+        mensaje = "💗 Tu lenguaje del amor es el contacto físico. Abrazos, caricias y cercanía son esenciales para ti.";
+        textoTwitter = "Physical Touch 💗";
+        break;
+      default:
+        mensaje = "Parece que no respondiste todas las preguntas. Inténtalo de nuevo.";
+    }
+
+    document.getElementById("resultado").innerText = mensaje;
+    document.getElementById("resultado").style.display = "block";
+
+    if (mensaje !== "Parece que no respondiste todas las preguntas. Inténtalo de nuevo.") {
+      // Mostrar promo y botón de compartir
+      document.getElementById("promo").style.display = "block";
+      document.getElementById("shareButtons").style.display = "block";
+
+      // Crear link de compartir en Twitter
+      const tweetText = encodeURIComponent(`My #TXT_LoveLanguage is ${textoTwitter} 💘 ¿Cuál es el tuyo? Descúbrelo aquí 👉`);
+      const tweetUrl = encodeURIComponent(window.location.href);
+      document.getElementById("twitterShare").href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}`;
+    }
+  }
+</script>
+
 </body>
   <footer style="text-align: center; margin-top: 50px; padding: 20px 0; background-color: #faf4d7;">
   <p style="margin-bottom: 10px;">Creado por <strong>@soobjinluv</strong></p>
